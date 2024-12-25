@@ -1,3 +1,5 @@
+[![Python CLI Workflow](https://github.com/chintanboghara/Task-Tracker-roadmap.sh/actions/workflows/python-app.yml/badge.svg)](https://github.com/chintanboghara/Task-Tracker-roadmap.sh/actions/workflows/python-app.yml)
+
 # Task Tracker CLI
 
 Task Tracker CLI is a lightweight command-line application to manage and track tasks efficiently. It uses a simple JSON file for data storage and provides commands to add, update, delete, and list tasks.
