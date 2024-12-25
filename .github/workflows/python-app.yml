@@ -31,8 +31,6 @@ jobs:
         echo "Testing CLI by listing tasks"
         python task_cli.py list
 
-    - name: Run linting
+    - name: Run unit tests
       run: |
-        pip install flake8
-        flake8 task_cli.py
-
+        python -m unittest discover tests
