@@ -1,75 +1,96 @@
-[![Python CLI Workflow](https://github.com/chintanboghara/Task-Tracker-roadmap.sh/actions/workflows/python-app.yml/badge.svg)](https://github.com/chintanboghara/Task-Tracker-roadmap.sh/actions/workflows/python-app.yml)
-
 # Task Tracker CLI
 
-Task Tracker CLI is a lightweight command-line application to manage and track tasks efficiently. It uses a simple JSON file for data storage and provides commands to add, update, delete, and list tasks.
+[![Python CLI Workflow](https://github.com/chintanboghara/Task-Tracker-roadmap.sh/actions/workflows/python-app.yml/badge.svg)](https://github.com/chintanboghara/Task-Tracker-roadmap.sh/actions/workflows/python-app.yml)
+
+Task Tracker CLI is a lightweight command-line application designed to help you manage and track your tasks with ease. Using a simple JSON file for data storage, the tool offers straightforward commands to add, update, delete, and list your tasks.
 
 ## Features
 
-- Add tasks with a description.
-- Update task descriptions.
-- Delete tasks by ID.
-- Mark tasks as `todo`, `in-progress`, or `done`.
-- List all tasks or filter by their status.
+- **Add Tasks:** Create new tasks with a description.
+- **Update Tasks:** Modify task descriptions.
+- **Delete Tasks:** Remove tasks by their unique ID.
+- **Status Management:** Mark tasks as:
+  - `todo`
+  - `in-progress`
+  - `done`
+- **Task Listing:** View all tasks or filter them based on their status.
 
 ## Installation
 
-### Prerequisites
-- Python 3.7 or higher installed on the system.
+1. **Clone the repository:**
 
-### Steps
+   ```bash
+   git clone https://github.com/chintanboghara/Task-Tracker-roadmap.sh.git
+   cd Task-Tracker-roadmap.sh
+   ```
 
-Create an empty `tasks.json` file in the project directory:
+2. **Create an empty JSON file for storing tasks:**
+
    ```bash
    echo "[]" > tasks.json
    ```
 
+3. (Optional) Set up a [virtual environment](https://docs.python.org/3/tutorial/venv.html) and install any dependencies (if applicable).
+
 ## Usage
 
-Run the CLI with the following commands:
+Run the CLI by invoking the `task_cli.py` script with various commands as described below:
 
 ### Adding a Task
+
 ```bash
 python task_cli.py add "Buy groceries"
 ```
 
 ### Updating a Task
+
 ```bash
 python task_cli.py update <task_id> "Updated task description"
 ```
 
 ### Deleting a Task
+
 ```bash
 python task_cli.py delete <task_id>
 ```
 
-### Marking a Task
-- Mark a task as in progress:
+### Marking a Task's Status
+
+- **In Progress:**
   ```bash
   python task_cli.py mark-in-progress <task_id>
   ```
-- Mark a task as done:
+- **Done:**
   ```bash
   python task_cli.py mark-done <task_id>
   ```
 
 ### Listing Tasks
-- List all tasks:
+
+- **List All Tasks:**
   ```bash
   python task_cli.py list
   ```
-- List tasks by status:
-  ```bash
-  python task_cli.py list todo
-  python task_cli.py list in-progress
-  python task_cli.py list done
-  ```
+- **Filter by Status:**
+  - For tasks with status `todo`:
+    ```bash
+    python task_cli.py list todo
+    ```
+  - For tasks marked as `in-progress`:
+    ```bash
+    python task_cli.py list in-progress
+    ```
+  - For tasks marked as `done`:
+    ```bash
+    python task_cli.py list done
+    ```
 
-## Task Properties
+## Task Data Structure
 
-Each task contains the following properties:
-- **id**: Unique identifier for the task.
-- **description**: A brief description of the task.
-- **status**: The current status (`todo`, `in-progress`, `done`).
-- **createdAt**: Timestamp of task creation.
-- **updatedAt**: Timestamp of the last update.
+Each task is stored as a JSON object with the following properties:
+
+- **id:** Unique identifier for the task.
+- **description:** A brief task description.
+- **status:** The current status (`todo`, `in-progress`, or `done`).
+- **createdAt:** Timestamp indicating when the task was created.
+- **updatedAt:** Timestamp indicating the last time the task was updated.
